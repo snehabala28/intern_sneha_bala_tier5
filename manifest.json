@@ -1,0 +1,15 @@
+{
+  "name": "My Routine",
+  "description": "This extention is made for maintain user's todo list",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icon.png"
+    
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"]
+
+}
