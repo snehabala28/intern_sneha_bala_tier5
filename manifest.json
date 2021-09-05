@@ -1,0 +1,41 @@
+{
+  "name": "Search & Print",
+  "description": "This extention is made for search on google along with printing a particular tab. It can inject Html to particular website and sent notification to the User and as well as it can manipulate the title of the website.  ",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icon.png"
+    
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+      "service_worker": "runtime.js"
+  },
+  "permissions": [
+  	"tabs",
+  	"activeTab",
+  	"scripting",
+  	"notifications"
+  ],
+  "host_permissions": [
+    "https://*.chrome.com/*",
+    "https://stackoverflow.com/*",
+    "https://m.facebook.com/*"
+  ],
+  "content_scripts": [
+    {
+        "css": ["notify.css"],
+        "js": ["content.js"],
+        "matches": [
+            "https://*.chrome.com/*",
+            "https://stackoverflow.com/*", 
+            "https://m.facebook.com/*"
+        ],
+        "run_at": "document_end"
+    }
+  ]
+
+
+}
